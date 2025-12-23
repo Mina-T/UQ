@@ -10,11 +10,11 @@ def get_drautz_label(key):
     return None, None 
 
 
-def drautz_atom_label(cat, sys_id, atom_id):
+def drautz_atom_label(cat, sys_id, atom_id): # make it drautz independent
     '''
     labels each atom of Drautz test set. 
     '''
     cat_id = get_drautz_label(cat)
-    atom_label = cat_id + '_' + sys_id + '_' + atom_id
+    atom_label = f"{cat_id}_{sys_id}_{atom_id}"
     return atom_label
 
