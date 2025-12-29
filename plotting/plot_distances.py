@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.stats import pearsonr, spearmanr
 
 def binned_scatter(
     x,
@@ -53,19 +52,6 @@ def binned_scatter(
         bin_centers[i] = np.median(xb)
         y_means[i] = np.mean(yb)
         y_stds[i] = np.std(yb)
-
-    if verbose:
-        corr_raw, _ = spearmanr(x, y)
-        corr_binned, _ = spearmanr(bin_centers, y_means)
-        pearson_raw, _ = pearsonr(x, y)
-        pearson_binned, _ = pearsonr(bin_centers, y_means)
-        print(
-            f"n_per_bin={n_per_bin} | "
-            f"raw Spearman={corr_raw:.3f} | "
-            f"binned Spearman={corr_binned:.3f}"
-            f"raw pearson={pearson_raw:.3f} | "
-            f"binned pearson={pearson_binned:.3f}"
-        )
 
     if show_scatter:
         ax.scatter(x, y, alpha=0.2, s=20, color=color, label="raw")
