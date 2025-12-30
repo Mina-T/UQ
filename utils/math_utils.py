@@ -1,6 +1,6 @@
 import numpy as np
 
-def rescale_list(array, a = 0.0, b = 1.0, eps = 1e-12):
+def normalize_array(array, a = 0.0, b = 1.0, eps = 1e-12):
     if isinstance(array, torch.Tensor):
         min_val = array.min()
         max_val = array.max()
