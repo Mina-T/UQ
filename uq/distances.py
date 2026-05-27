@@ -3,7 +3,7 @@ import numpy as np
 from scipy.spatial import distance
 from joblib import Parallel, delayed
 
-class measure_distance:
+class Distance_metrics:
     def __init__(self, observation, distribution):
         '''
         array1: test set array
